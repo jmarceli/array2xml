@@ -1,17 +1,30 @@
 <?php
 // Based on: http://stackoverflow.com/questions/99350/passing-php-associative-arrays-to-and-from-xml
 class ArrayToXML {
+  private $version;
+  private $encoding;
+
+  /*
+   * Construct ArrayToXML object with selected version and encoding 
+   *
+   * for available values check XmlWriter docs http://www.php.net/manual/en/function.xmlwriter-start-document.php
+   * @param string $xml_version XML Version, default 1.0
+   * @param string $xml_encoding XML Encoding, default UTF-8
+   */
+  public function __construct($xmlVersion = '1.0', $xmEncoding = 'UTF-8') {
+    $this->version = $xmlVersion;
+    $this->encoding = $xmlEncoding;
+  }
+
   /**
    * Build an XML Data Set
    *
    * @param array $data Associative Array containing values to be parsed into an XML Data Set(s)
    * @param string $startElement Root Opening Tag, default data
-   * @param string $xml_version XML Version, default 1.0
-   * @param string $xml_encoding XML Encoding, default UTF-8
    * @return string XML String containig values
    * @return mixed Boolean false on failure, string XML result on success
    */
-  public function buildXML($data, $startElement = 'data', $xml_version = '1.0', $xml_encoding = 'UTF-8'){
+  public function buildXML($data, $startElement = 'data'){
     if(!is_array($data)){
       $err = 'Invalid variable type supplied, expected array not found on line '.__LINE__." in Class: ".__CLASS__." Method: ".__METHOD__;
       trigger_error($err);
@@ -20,7 +33,7 @@ class ArrayToXML {
     }
     $xml = new XmlWriter();
     $xml->openMemory();
-    $xml->startDocument($xml_version, $xml_encoding);
+    $xml->startDocument($this->version, $this->encoding);
     $xml->startElement($startElement);
 
     $this->writeEl($xml, $data);
@@ -67,6 +80,7 @@ class ArrayToXML {
 
   /**
    * Write XML as per Associative Array
+   *
    * @param object $xml XMLWriter Object
    * @param array $data Associative Data Array
    */
@@ -96,8 +110,12 @@ class ArrayToXML {
     }
   }
 
-  // Checks if array is associative with string based keys
-  // FROM: http://stackoverflow.com/questions/173400/php-arrays-a-good-way-to-check-if-an-array-is-associative-or-sequential/4254008#4254008
+  /*
+   * Check if array is associative with string based keys
+   * FROM: http://stackoverflow.com/questions/173400/php-arrays-a-good-way-to-check-if-an-array-is-associative-or-sequential/4254008#4254008
+   *
+   * @param array $array Array to check
+   */
   protected function isAssoc($array) {
     return (bool)count(array_filter(array_keys($array), 'is_string'));
   }
