@@ -82,7 +82,7 @@ print $xml->buildXML($input);
 
 OUTPUT (XML data):
 <pre><code>
-&lt;lt?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;data&gt;
 &lt;product id="8"&gt;
 &lt;description&gt;&lt;![CDATA[]]&gt;&lt;/description&gt;
