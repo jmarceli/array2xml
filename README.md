@@ -82,51 +82,51 @@ print $xml->buildXML($input);
 
 OUTPUT (XML data):
 <pre><code>
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-<product id="8">
-<description><![CDATA[]]></description>
-<longdescription><![CDATA[]]></longdescription>
-<shortdescription><![CDATA[]]></shortdescription>
-<name>some string</name>
-<seo>some-string</seo>
-<ean></ean>
-<producer>
-<name></name>
-<photo>1.png</photo>
-</producer>
-<stock>123</stock>
-<trackstock>0</trackstock>
-<new>0</new>
-<pricewithoutvat>1111</pricewithoutvat>
-<price>1366.53</price>
-<discountpricenetto></discountpricenetto>
-<discountprice></discountprice>
-<vatvalue>23</vatvalue>
-<currencysymbol>PLN</currencysymbol>
-<category>
-<photo>1.png</photo>
-<name>test3</name>
-</category>
-<staticattributes>
-<attributegroup name="attributes group">
-<attribute>
-<name>second</name>
-<description>&lt;p&gt;desc2&lt;/p&gt;</description>
-<file></file>
-</attribute>
-<attribute>
-<name>third</name>
-<description>&lt;p&gt;desc3&lt;/p&gt;</description>
-<file></file>
-</attribute>
-</attributegroup>
-</staticattributes>
-<photos>
-<photo mainphoto="1">1.png</photo>
-<photo mainphoto="0">2.png</photo>
-<photo mainphoto="0">3.png</photo>
-</photos>
-</product>
-</data>
+&lt;lt?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;data&gt;
+&lt;product id="8"&gt;
+&lt;description&gt;&lt;![CDATA[]]&gt;&lt;/description&gt;
+&lt;longdescription&gt;&lt;![CDATA[]]&gt;&lt;/longdescription&gt;
+&lt;shortdescription&gt;&lt;![CDATA[]]&gt;&lt;/shortdescription&gt;
+&lt;name&gt;some string&lt;/name&gt;
+&lt;seo&gt;some-string&lt;/seo&gt;
+&lt;ean&gt;&lt;/ean&gt;
+&lt;producer&gt;
+&lt;name&gt;&lt;/name&gt;
+&lt;photo&gt;1.png&lt;/photo&gt;
+&lt;/producer&gt;
+&lt;stock&gt;123&lt;/stock&gt;
+&lt;trackstock&gt;0&lt;/trackstock&gt;
+&lt;new&gt;0&lt;/new&gt;
+&lt;pricewithoutvat&gt;1111&lt;/pricewithoutvat&gt;
+&lt;price&gt;1366.53&lt;/price&gt;
+&lt;discountpricenetto&gt;&lt;/discountpricenetto&gt;
+&lt;discountprice&gt;&lt;/discountprice&gt;
+&lt;vatvalue&gt;23&lt;/vatvalue&gt;
+&lt;currencysymbol&gt;PLN&lt;/currencysymbol&gt;
+&lt;category&gt;
+&lt;photo&gt;1.png&lt;/photo&gt;
+&lt;name&gt;test3&lt;/name&gt;
+&lt;/category&gt;
+&lt;staticattributes&gt;
+&lt;attributegroup name="attributes group"&gt;
+&lt;attribute&gt;
+&lt;name&gt;second&lt;/name&gt;
+&lt;description&gt;&lt;p&gt;desc2&lt;/p&gt;&lt;/description&gt;
+&lt;file&gt;&lt;/file&gt;
+&lt;/attribute&gt;
+&lt;attribute&gt;
+&lt;name&gt;third&lt;/name&gt;
+&lt;description&gt;&lt;p&gt;desc3&lt;/p&gt;&lt;/description&gt;
+&lt;file&gt;&lt;/file&gt;
+&lt;/attribute&gt;
+&lt;/attributegroup&gt;
+&lt;/staticattributes&gt;
+&lt;photos&gt;
+&lt;photo mainphoto="1"&gt;1.png&lt;/photo&gt;
+&lt;photo mainphoto="0"&gt;2.png&lt;/photo&gt;
+&lt;photo mainphoto="0"&gt;3.png&lt;/photo&gt;
+&lt;/photos&gt;
+&lt;/product&gt;
+&lt;/data&gt;
 </code></pre>
