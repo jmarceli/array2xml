@@ -7,9 +7,13 @@ Entire project is based on this [issue](http://stackoverflow.com/questions/99350
 
 Sample usage (it's just a code from my project):
 
+THE CODE:
+<pre><code>$xml = new ArrayToXML();
+print $xml->buildXML($input);
+</code></pre>
+
 INPUT:
-<pre><code>
-$input = array('product' => array(
+<pre><code>$input = array('product' => array(
       '@id' => 7,
       'name' => 'some string',
       'seo' => 'some-string',
@@ -41,13 +45,13 @@ $input = array('product' => array(
                   'attribute' => array(
                       0 => array(
                           'name' => 'second',
-                          'description' => '<p>desc2</p>',
+                          'description' => '&lt;p&gt;desc2&lt;/p&gt;',
                           'file' => '',
                       ),
                       1 => 
                         array
                           'name' => 'third',
-                          'description' => '<p>desc3</p>',
+                          'description' => '&lt;p&gt;desc3&lt;/p&gt;',
                           'file' => '',
                       ),
                   )
@@ -74,15 +78,8 @@ $input = array('product' => array(
 ));
 </code></pre>
 
-THE CODE:
-<pre><code>
-$xml = new ArrayToXML();
-print $xml->buildXML($input);
-</code></pre>
-
 OUTPUT (XML data):
-<pre><code>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;data&gt;
 &lt;product id="8"&gt;
 &lt;description&gt;&lt;![CDATA[]]&gt;&lt;/description&gt;
