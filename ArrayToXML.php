@@ -11,7 +11,7 @@ class ArrayToXML {
    * @param string $xml_version XML Version, default 1.0
    * @param string $xml_encoding XML Encoding, default UTF-8
    */
-  public function __construct($xmlVersion = '1.0', $xmEncoding = 'UTF-8') {
+  public function __construct($xmlVersion = '1.0', $xmlEncoding = 'UTF-8') {
     $this->version = $xmlVersion;
     $this->encoding = $xmlEncoding;
   }
