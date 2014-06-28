@@ -1,4 +1,5 @@
 <?php
+// Based on: http://stackoverflow.com/questions/99350/passing-php-associative-arrays-to-and-from-xml
 class ArrayToXML {
   /**
    * Build an XML Data Set
@@ -28,6 +29,7 @@ class ArrayToXML {
     //returns the XML results
     return $xml->outputMemory(true);
   }
+
   /**
    * Write keys in $data prefixed with @ as XML attributes, if $data is an array. 
    * When an @ prefixed key is found, a '%' key is expected to indicate the element itself, 
@@ -94,7 +96,8 @@ class ArrayToXML {
     }
   }
 
-  // Checks if array is an associative
+  // Checks if array is associative with string based keys
+  // FROM: http://stackoverflow.com/questions/173400/php-arrays-a-good-way-to-check-if-an-array-is-associative-or-sequential/4254008#4254008
   protected function isAssoc($array) {
     return (bool)count(array_filter(array_keys($array), 'is_string'));
   }
