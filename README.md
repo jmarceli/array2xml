@@ -13,7 +13,8 @@ print $xml->buildXML($input);
 </code></pre>
 
 INPUT:
-<pre><code>$input = array('product' => array(
+<pre><code>
+$input = array('product' => array(
       '@id' => 7,
       'name' => 'some string',
       'seo' => 'some-string',
@@ -21,7 +22,7 @@ INPUT:
       'producer' => array(
           'name' => null,
           'photo' => '1.png'
-      )
+      ),
       'stock' => 123,
       'trackstock' => 0,
       'new' => 0,
@@ -37,7 +38,7 @@ INPUT:
       'category' => array(
           'photo' => '1.png',
           'name' => 'test3',
-      )
+      ),
       'staticattributes' => array(
           'attributegroup' => array(
               1 => array(
@@ -45,13 +46,13 @@ INPUT:
                   'attribute' => array(
                       0 => array(
                           'name' => 'second',
-                          'description' => '&lt;p&gt;desc2&lt;/p&gt;',
+                          'description' => 'desc2',
                           'file' => '',
                       ),
                       1 => 
-                        array
+                        array(
                           'name' => 'third',
-                          'description' => '&lt;p&gt;desc3&lt;/p&gt;',
+                          'description' => 'desc3',
                           'file' => '',
                       ),
                   )
