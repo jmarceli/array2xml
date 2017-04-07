@@ -24,7 +24,7 @@ class ArrayToXML {
    * @return string XML String containig values
    * @return mixed Boolean false on failure, string XML result on success
    */
-  public function buildXML($data, $startElement = 'data'){
+  public function buildXML($data, $startElement = 'data', $startDocument = true){
     if(!is_array($data)){
       $err = 'Invalid variable type supplied, expected array not found on line '.__LINE__." in Class: ".__CLASS__." Method: ".__METHOD__;
       trigger_error($err);
@@ -33,7 +33,7 @@ class ArrayToXML {
     }
     $xml = new XmlWriter();
     $xml->openMemory();
-    $xml->startDocument($this->version, $this->encoding);
+    $startDocument ? $xml->startDocument($this->version, $this->encoding) : '';
     $xml->startElement($startElement);
 
     $this->writeEl($xml, $data);
