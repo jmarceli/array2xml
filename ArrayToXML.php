@@ -41,7 +41,7 @@ class ArrayToXML
         $xml->startDocument($this->version, $this->encoding);
         $xml->startElement($startElement);
 
-        $this->writeAttr($xml, $data);
+        $data = $this->writeAttr($xml, $data);
         $this->writeEl($xml, $data);
 
         $xml->endElement(); //write end element
