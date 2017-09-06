@@ -41,7 +41,7 @@ class ArrayToXML
         $xml->startDocument($this->version, $this->encoding);
         $xml->startElement($startElement);
 
-        $this->writeAttr($xml, $data);
+        $data = $this->writeAttr($xml, $data);
         $this->writeEl($xml, $data);
 
         $xml->endElement(); //write end element
@@ -76,7 +76,11 @@ class ArrayToXML
                         $xml->writeCData($val);
                         $xml->endElement();
                     }
-                } //ignore normal elements
+                }else if($key[0] == "!"){
+                    if (is_array($val)) $nonAttributes = $val;
+                    else $xml->writeCData($val);
+                } 
+                //ignore normal elements
                 else $nonAttributes[$key] = $val;
             }
             return $nonAttributes;
